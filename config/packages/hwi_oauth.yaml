@@ -1,0 +1,10 @@
+hwi_oauth:
+    firewall_names: [secured_area]
+    resource_owners:
+        auth0:
+            type:                oauth2
+            class:               'App\Auth0ResourceOwner'
+            client_id:           "%env(AUTH0_CLIENT_ID)%"
+            client_secret:       "%env(AUTH0_CLIENT_SECRET)%"
+            base_url:            "https://%env(AUTH0_DOMAIN)%"
+            scope: "openid profile"
